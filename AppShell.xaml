@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell x:Class="MotoTrack.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:MotoTrack.Views"
+       Title="MotoTrack"
+       FlyoutBehavior="Disabled"
+       Shell.BackgroundColor="#0E1116"
+       Shell.ForegroundColor="#EDEFF2"
+       Shell.TitleColor="#EDEFF2"
+       Shell.NavBarHasShadow="False"
+       Shell.TabBarBackgroundColor="#0E1116"
+       Shell.TabBarForegroundColor="#FF9A2E"
+       Shell.TabBarTitleColor="#FF9A2E"
+       Shell.TabBarUnselectedColor="#9AA3AF">
+
+    <!-- Écran de démarrage : connexion -->
+    <ShellContent Route="Connexion" ContentTemplate="{DataTemplate views:ConnexionPage}" />
+
+    <!-- Application : barre de 4 onglets -->
+    <TabBar Route="Principal">
+        <ShellContent Title="Motos" Icon="ic_moto.png" Route="Motos"
+                      ContentTemplate="{DataTemplate views:MotosPage}" />
+        <ShellContent Title="Carte" Icon="ic_carte.png" Route="Carte"
+                      ContentTemplate="{DataTemplate views:SuiviPage}" />
+        <ShellContent Title="Alertes" Icon="ic_alerte.png" Route="Alertes"
+                      ContentTemplate="{DataTemplate views:AlertesPage}" />
+        <ShellContent Title="Historique" Icon="ic_historique.png" Route="Historique"
+                      ContentTemplate="{DataTemplate views:HistoriquePage}" />
+    </TabBar>
+</Shell>
